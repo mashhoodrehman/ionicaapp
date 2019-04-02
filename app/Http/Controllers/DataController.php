@@ -23,8 +23,7 @@ class DataController extends Controller
                 $event->location = $request->address;
                 $event->start_date = $request->start_date;
                 $event->end_date = $request->end_date;
-                $img = base64_decode($request->profile);
-                $event->profile = $img;
+                $event->profile = $request->profile;
                 $event->user_id = $user->id;
                 $event->save();
                 return response()->json(['message' => 'added event' , 'code' => 200]);
