@@ -21,6 +21,7 @@ Route::post('register', 'UserController@register');
         Route::get('user', 'UserController@getAuthenticatedUser');
         Route::get('closed', 'DataController@closed');
         Route::get('getevents', 'DataController@getPosts');
+        Route::get('getcategories', 'DataController@getCategories');
     Route::get('likeset/{id}' , 'DataController@likeset');
     Route::get('check' , 'UserController@getAuthenticatedUser');
     Route::get('interestset/{id}' , 'DataController@interestSet');

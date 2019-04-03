@@ -9,6 +9,7 @@ use App\Like;
 use App\Interest;
 use App\Comment;
 use App\EventImages;
+use App\Category;
 
 class DataController extends Controller
 {
@@ -114,6 +115,11 @@ class DataController extends Controller
                 $comment->save();
                 $events = Event::with('user' , 'commentsdata.user')->withCount('likes' , 'comments')->find($request->postid);
                 return response()->json(['data' => $events , 'code' => 200]);
+            }
+
+            public function getCategories(){
+                $categories = Category::all();
+                return response()->json($categories);
             }
 
 }
