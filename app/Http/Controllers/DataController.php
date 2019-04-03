@@ -26,6 +26,13 @@ class DataController extends Controller
                 $event->profile = $request->profile;
                 $event->user_id = $user->id;
                 $event->save();
+                foreach ($request->images as $key => $value) {
+                $images = new EventImages;
+                $images->post_id = $event->id;
+                $images->image = $value;
+                $images->save();
+                }
+
                 return response()->json(['message' => 'added event' , 'code' => 200]);
 
             }
