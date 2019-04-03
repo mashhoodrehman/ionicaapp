@@ -10,6 +10,7 @@ use App\Interest;
 use App\Comment;
 use App\EventImages;
 use App\Category;
+use App\Category_Event;
 
 class DataController extends Controller
 {
