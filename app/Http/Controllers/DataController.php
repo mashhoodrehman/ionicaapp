@@ -8,6 +8,7 @@ use JWTAuth;
 use App\Like;
 use App\Interest;
 use App\Comment;
+use App\EventImages;
 
 class DataController extends Controller
 {
