@@ -35,10 +35,13 @@ class DataController extends Controller
                 $images->image = $value;
                 $images->save();
                 }
+                foreach($request->category as $category){
                 $categoryevent = new Category_Event;
                 $categoryevent->event_id = $event->id;
-                $categoryevent->category_id = $request->category;
-                $categoryevent->save();
+                $categoryevent->category_id = $category;
+                $categoryevent->save();    
+                }
+                
                 return response()->json(['message' => 'added event' , 'code' => 200]);
 
             }
