@@ -129,4 +129,9 @@ class DataController extends Controller
                 return response()->json($categories);
             }
 
+            public function eventsCategories(){
+                $categories = Category::has('events')->get();
+                return response()->json($categories);
+            }
+
 }
