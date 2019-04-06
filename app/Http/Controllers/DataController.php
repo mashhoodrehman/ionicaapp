@@ -131,6 +131,7 @@ class DataController extends Controller
             }
 
             public function eventsCategories($date){
+                dd($date);
                 $cate = Category::has('events');
                 if($date == "today"){
                     $carbondate = Carbon::today();
