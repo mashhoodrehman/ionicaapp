@@ -8,7 +8,7 @@ class Category extends Model
 {
     protected $table = 'categories';
 
-    protected $primary = 'category_id';
+    protected $primaryKey = 'category_id';
 
     public function events(){
     	return $this->belongsToMany('App\Category' , 'categories_events' , 'event_id' , 'category_id');
