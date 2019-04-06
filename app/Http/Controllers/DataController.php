@@ -130,7 +130,7 @@ class DataController extends Controller
             }
 
             public function eventsCategories(){
-                $categories = Category::has('events')->get();
+                $categories = Category::with('events')->get();
                 return response()->json($categories);
             }
 
