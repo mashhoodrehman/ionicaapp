@@ -129,9 +129,20 @@ class DataController extends Controller
                 return response()->json($categories);
             }
 
-            public function eventsCategories(){
-                $cate = Category::has('events')->get();
-                $categories = Category::all();
+            public function eventsCategories($date){
+                $cate = Category::has('events');
+                if($date == "today"){
+                    $carbondate = Carbon::today();
+                   $cate  = $cate->whereDate('created_at', Carbon::today())->get();
+                }
+                elseif($date = "weekly"){
+                    $cate  = $cate->whereDate('created_at', [Carbon::now()->startOfWeek(), Carbon::now()->endOfWeek()])->get();
+                }
+                else{
+                 $cate  = $cate->whereDate('created_at', [Carbon::now()->startOfMonth(), Carbon::now()->endOfMonth()])->get();   
+                }
+                
+                // $categories = Category::all();
                 return response()->json($cate);
             }
 

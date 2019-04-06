@@ -22,13 +22,9 @@ Route::post('register', 'UserController@register');
         Route::get('closed', 'DataController@closed');
         Route::get('getevents', 'DataController@getPosts');
         Route::get('getcategories', 'DataController@getCategories');
-        Route::get('geteventscategories', 'DataController@eventsCategories');
+        Route::get('geteventscategories/{today}', 'DataController@eventsCategories');
     Route::get('likeset/{id}' , 'DataController@likeset');
     Route::get('check' , 'UserController@getAuthenticatedUser');
     Route::get('interestset/{id}' , 'DataController@interestSet');
     Route::get('postdetail/{id}' , 'DataController@postDetail');
     Route::post('savecomment' , 'DataController@commentSave');
-    // Route::group(['middleware' => ['jwt.verify']], function() {
-        
-        
-    // });
