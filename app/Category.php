@@ -9,6 +9,6 @@ class Category extends Model
     protected $table = 'categories';
 
     public function events(){
-    	return $this->belongsToMany('App\Event' , 'categories_events' , 'event_id' , 'category_id');
+    	return $this->belongsToMany('App\Event' , 'categories_events' , 'category_id' , 'event_id');
     }
 }
