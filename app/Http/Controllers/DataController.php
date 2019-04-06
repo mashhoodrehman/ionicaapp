@@ -136,7 +136,7 @@ class DataController extends Controller
                     $carbondate = Carbon::today();
                    $cate  = $cate->whereDate('created_at', Carbon::today())->get();
                 }
-                elseif($date = "weekly"){
+                elseif($date == "weekly"){
                     $cate  = $cate->whereDate('created_at', [Carbon::now()->startOfWeek(), Carbon::now()->endOfWeek()])->get();
                 }
                 else{
