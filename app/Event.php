@@ -30,7 +30,7 @@ class Event extends Model
         return $this->hasMany('App\Comment' , 'post_id' , 'id');
     }
 
-    public function events(){
+    public function categories(){
         return $this->belongsToMany('App\Category' , 'categories_events' , 'event_id' , 'category_id');
     }
 }
