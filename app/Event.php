@@ -8,6 +8,8 @@ class Event extends Model
 {
     protected $table = "event";
 
+    protected $primaryKey = 'event_id';
+
     public function user(){
         return $this->hasOne('App\User' , 'id' , 'user_id');
     }
