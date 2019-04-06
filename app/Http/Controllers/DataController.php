@@ -131,13 +131,14 @@ class DataController extends Controller
             }
 
             public function eventsCategories($date){
-                dd($date);
+
                 $cate = Category::has('events');
                 if($date == "today"){
                     $carbondate = Carbon::today();
                    $cate  = $cate->whereDate('created_at', Carbon::today())->get();
                 }
                 elseif($date == "weekly"){
+                dd($date);
                     $cate  = $cate->whereDate('created_at', [Carbon::now()->startOfWeek(), Carbon::now()->endOfWeek()])->get();
                 }
                 else{
