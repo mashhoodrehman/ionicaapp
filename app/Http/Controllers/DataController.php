@@ -142,7 +142,7 @@ class DataController extends Controller
                     $cate  = Category::has('events')->whereDate('created_at', [Carbon::now()->startOfWeek(), Carbon::now()->endOfWeek()])->toSql();
                 }
                 else{
-                 $cate  = Category::has('events')->whereDate('created_at', [Carbon::now()->startOfMonth(), Carbon::now()->endOfMonth()])->get();   
+                 $cate  = Category::has('events')->get();   
                  dd($cate);
                 }
                 
