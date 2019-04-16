@@ -28,3 +28,5 @@ Route::post('register', 'UserController@register');
     Route::get('interestset/{id}' , 'DataController@interestSet');
     Route::get('postdetail/{id}' , 'DataController@postDetail');
     Route::post('savecomment' , 'DataController@commentSave');
+
+    Route::post('forgot/password', 'ForgotPasswordController')->name('forgot.password');
